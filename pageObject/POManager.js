@@ -9,11 +9,7 @@ class POManager
     this.fromLoginPage = new LoginPage(this.page);            
     this.fromLandingPage = new LandingPage(this.page);
 }
-getLoginPage(){
-    return this.fromLoginPage;
-}
-getLandingPage(){
-    return this.fromLandingPage;
-}
+getLoginPage(){return this.fromLoginPage;}
+getLandingPage(){return this.fromLandingPage;}
 }
 module.exports = {POManager};

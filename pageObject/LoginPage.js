@@ -18,6 +18,7 @@ class LoginPage{
         await this.usernameLocator.fill(username);
         await this.passwordLocator.fill(password);
         await this.loginButtonLocator.click();
+        console.log("just to check");
     }
 }
 module.exports = {LoginPage};
