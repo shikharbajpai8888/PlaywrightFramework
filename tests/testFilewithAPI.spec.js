@@ -2,27 +2,27 @@ const {test, expect} = require('@playwright/test');
 const {POManager} = require('../pageObject/POManager');
 const testdata = JSON.parse(JSON.stringify(require ('../testData/LoansData.json')));
 
-// test.beforeAll()
-// for(const dataset of testdata){
-// test(`@Sanity _TC001_Dataset-${dataset.ds}_RS client page_Login`,  async ({page}) =>
-// {
-//     const fromPOManager = new POManager(page);                             
-//     const fromLoginPage = fromPOManager.getLoginPage();            
-//     const fromLandingPage = fromPOManager.getLandingPage(); 
+test.beforeAll()
+for(const dataset of testdata){
+test(`@Sanity _TC001_Dataset-${dataset.ds}_RS client page_Login`,  async ({page}) =>
+{
+    const fromPOManager = new POManager(page);                             
+    const fromLoginPage = fromPOManager.getLoginPage();            
+    const fromLandingPage = fromPOManager.getLandingPage(); 
 
-//     await fromLoginPage.goTo();                                            
-//     await fromLoginPage.validLogin(dataset.username, dataset.password); 
+    await fromLoginPage.goTo();                                            
+    await fromLoginPage.validLogin(dataset.username, dataset.password); 
     
-//     //Assertion 1: Validate the Page Title - try to keep one assertion in one test
-//     await expect (page).toHaveTitle("Let's Shop");
+    //Assertion 1: Validate the Page Title - try to keep one assertion in one test
+    await expect (page).toHaveTitle("Let's Shop");
    
-//     //Assertion 2: Validate the test on header field - try to keep one assertion in one test
-//     await expect( fromLandingPage.headerLocator).toContainText('Showing 8 results |');
+    //Assertion 2: Validate the test on header field - try to keep one assertion in one test
+    await expect( fromLandingPage.headerLocator).toContainText('Showing 8 results |');
 
-//     //Assertion 3: Validate Page Logo - try to keep one assertion in one test
-//     expect (await fromLandingPage.logoLocator.screenshot()).toMatchSnapshot(`originalscreen1.png`);
-// });
-// }
+    //Assertion 3: Validate Page Logo - try to keep one assertion in one test
+    expect (await fromLandingPage.logoLocator.screenshot()).toMatchSnapshot(`originalscreen1.png`);
+});
+}
 
 
 
