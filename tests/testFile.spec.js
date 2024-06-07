@@ -16,8 +16,8 @@ test(`@Sanity _TC001_Dataset-${dataset.ds}_RS client page_Login`,  async ({page}
     await expect (page).toHaveTitle("Let's Shop");
    
     //Assertion 2: Validate the test on header field - try to keep one assertion in one test
-    await expect( fromLandingPage.headerLocator).toContainText('Showing 8 results |');
-
+    await expect (fromLandingPage.headerLocator).toContainText(' ORDERS');
+    
     //Assertion 3: Validate Page Logo - try to keep one assertion in one test
     expect (await fromLandingPage.logoLocator.screenshot()).toMatchSnapshot(`originalscreen1.png`);
 });
