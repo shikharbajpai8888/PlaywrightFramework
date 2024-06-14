@@ -3,12 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": { 
+    "alltest" : "npx playwright test && allure generate ./allure-results --clean -o ./allure-report && allure open ./allure-report",
+    "alltestheader" : "npx playwright test --header && allure generate ./allure-results --clean -o ./allure-report && allure open ./allure-report",
+    "alltestdebug" : "npx playwright test --debug && allure generate ./allure-results --clean -o ./allure-report && allure open ./allure-report",
+    "sanity" : "npx playwright test --grep @Sanity && allure generate ./allure-results --clean -o ./allure-report && allure open ./allure-report"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.44.1",
-    "@types/node": "^20.13.0"
+    "@types/node": "^20.13.0",
+    "allure-playwright": "^3.0.0-beta.3"
   }
 }

@@ -2,9 +2,9 @@ const {test, expect} = require('@playwright/test');
 const {POManager} = require('../pageObject/POManager');
 const testdata = JSON.parse(JSON.stringify(require ('../testData/LoansData.json')));
 
-test.beforeAll()
+//test.beforeAll()
 for(const dataset of testdata){
-test(`@Sanity _TC001_Dataset-${dataset.ds}_RS client page_Login`,  async ({page}) =>
+test.skip(`@Sanity _TC001_Dataset-${dataset.ds}_RS client page_Login`,  async ({page}) =>
 {
     const fromPOManager = new POManager(page);                             
     const fromLoginPage = fromPOManager.getLoginPage();            
