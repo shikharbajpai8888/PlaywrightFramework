@@ -19,5 +19,9 @@ class LoginPage{
         await this.passwordLocator.fill(password);
         await this.loginButtonLocator.click();
     }
+    // async validLoginAPI()
+    // {
+
+    // }
 }
 module.exports = {LoginPage};
